@@ -1,19 +1,28 @@
 import React from 'react';
-import { getCourses } from '../api/courseApi';
+import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-class CoursesPage extends React.Component {
+const baseUrl = process.env.REACT_APP_API_URL;
+
+class Courses extends React.Component {
     state = {
         courses: []
     }
 
     componentDidMount() {
-        getCourses().then(courses => this.setState({ courses: courses }));
+        axios.get(baseUrl+'/courses')
+        .then(res => {
+            console.log(res);
+            this.setState({courses:res.data});
+        })
     }
 
     render() {
         return (
             <>
         <h1>Courses</h1>
+        <div className="new-btn"><Link to ={'/newCourse'} className="nav-link">
+            <button type="button" class="btn btn-primary">Create New Course</button></Link></div>
         <table className="table">
             <thead>
             <tr>
@@ -44,4 +53,4 @@ class CoursesPage extends React.Component {
 
 }
 
-export default CoursesPage;
+export default Courses;
