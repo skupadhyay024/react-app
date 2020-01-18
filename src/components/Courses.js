@@ -63,7 +63,7 @@ Courses.propTypes = {
     courses: PropTypes.array.isRequired,
 };
 
-function mapStateToProps(state){yield
+function mapStateToProps(state){
     return {
         courses: state.courses.items
     }
