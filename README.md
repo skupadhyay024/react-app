@@ -71,3 +71,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### To Install the mock api
 
 npm install -D cross-env@5.2.0 npm-run-all@4.1.5 json-server@0.15.0
+
+### Add DEVTOOL Support
+
+npm install --save-dev redux-immutable-state-invariant
+

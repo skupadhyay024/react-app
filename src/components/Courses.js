@@ -1,5 +1,9 @@
 import React from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { loadCourses } from '../redux/actions/courseActions';
+import { bindActionCreators } from 'redux';
+
+import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const baseUrl = process.env.REACT_APP_API_URL;
@@ -10,11 +14,13 @@ class Courses extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(baseUrl+'/courses')
-        .then(res => {
-            console.log(res);
-            this.setState({courses:res.data});
-        })
+        // axios.get(baseUrl+'/courses')
+        // .then(res => {
+        //     console.log(res);
+        //     this.setState({courses:res.data});
+        // })
+
+        this.props.loadCourses();
     }
 
     render() {
@@ -22,7 +28,7 @@ class Courses extends React.Component {
             <>
         <h1>Courses</h1>
         <div className="new-btn"><Link to ={'/newCourse'} className="nav-link">
-            <button type="button" class="btn btn-primary">Create New Course</button></Link></div>
+            <button type="button" className="btn btn-primary">Create New Course</button></Link></div>
         <table className="table">
             <thead>
             <tr>
@@ -32,7 +38,7 @@ class Courses extends React.Component {
             </tr>
             </thead>
         <tbody>
-      {  this.state.courses.map(course => {
+      {  this.props.courses.map(course => {
             return (
             <tr key={course.id}>
             <td>{ course.title }</td>
@@ -53,4 +59,20 @@ class Courses extends React.Component {
 
 }
 
-export default Courses;
+Courses.propTypes = {
+    courses: PropTypes.array.isRequired,
+};
+
+function mapStateToProps(state){yield
+    return {
+        courses: state.courses.items
+    }
+}
+
+// function mapDispatchToProps(dispatch){
+//     return {
+//         actions: bindActionCreators(courseActions, dispatch)
+//     }
+// }
+
+export default connect (mapStateToProps, {loadCourses}) (Courses);
