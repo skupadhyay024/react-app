@@ -65,7 +65,7 @@ Courses.propTypes = {
 
 function mapStateToProps(state){
     return {
-        courses: state.courses.items
+        courses: state.courses.items 
     }
 }
 
