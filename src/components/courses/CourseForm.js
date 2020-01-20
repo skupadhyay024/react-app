@@ -1,79 +1,72 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import TextInput from '../common/TextInput';
+import SelectInput from "../common/SelectInput";
 
 
 
-class CourseForm extends React.Component{
+const CourseForm = ({
+    course,
+    authors,
+    onSave,
+    onChange,
+    saving = false,
+    errors = {}
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-    
-        const title = this.getTitle.value;
-        const slug = this.getSlug.value;
-        const authorId = this.getAuthorId.value;
-        const category = this.getCategory.value;
-    
-        const data = {
-            id: new Date(),
-            title,
-            slug,
-            authorId,
-            category
-        }
-    
-        this.PaymentResponse.dispatch({
-            type:'ADD_COURSE',
-            data
-        });
-    
-        console.log(data);
-    }
+}) => {
+    return (
+        <form onSubmit={onSave}>
+            <h2>{course.id ? "Edit" : "Add"} Course</h2>
+            {errors.onSave && (
+                <div className="alert alert-danger" role="alert">
+                    {errors.onSave}
+                </div>
+            )}
 
-render(){
-return ( <>
-<h2>Fill Course Details</h2>
-<form onSubmit={this.handleSubmit}>
-    <div className="form-group row">
-        <label htmlFor="title" className="col-sm-2 col-form-labelcol-form-label-lg">Title: </label>
-        <div className="col-sm-8">
-            <input type="text" className="form-control" id="title" ref={(input) => this.getTitle = input}/>
-        </div>
-    </div>
-    <div className="form-group row">
-        <label htmlFor="slug" className="col-sm-2 col-form-labelcol-form-label-lg">Slug: </label>
-        <div className="col-sm-8">
-            <input type="text" className="form-control" id="slug" ref={(input) => this.getSlug = input}/>
-        </div>
-    </div>
-    <div className="form-group row">
-        <label htmlFor="authorId" className="col-sm-2 col-form-labelcol-form-label-lg">AuthorId: </label>
-        <div className="col-sm-8">
-            <input type="text" className="form-control" id="authorId" ref={(input) => this.getAuthorId = input}/>
-        </div>
-    </div>
+            <TextInput
+            name="title"
+            label="Title"
+            value={course.title}
+            onChange={onChange}
+            error={errors.title}
+            />
 
-    <div className="form-group row">
-        <label htmlFor="category" className="col-sm-2 col-form-labelcol-form-label-lg">Category: </label>
-        <div className="col-sm-3">
-            <select id="category" className="form-control" ref={(value) => this.getCategory =value}>
-                <option value ="JavaScript" defaultValue>JavaScript</option>
-                <option value ="Software Practices" >Software Practices</option>
-                <option value ="Career" >Career</option>
-                <option value ="HTML" >HTML</option>
-            </select>
-        </div>
-    </div>
-    <div className="form-group row">
-        <div className="col-sm-8">
-            <button type="submit" style={{margin:"5px"}} className="btn btn-primary">Submit</button>
-            <button type="cancel"  className="btn btn-danger">Cancel</button>
-        </div>
-    </div>
+            <SelectInput 
+            name="authorId"
+            label="Author"
+            value={course.authorId || ""}
+            defaultOption="Select Author"
+            options={authors.map(author => ({
+                    value:author.id,
+                        text: author.name
+            }))}
+            onChange={onChange}
+            error={errors.author}
+            />
+
+            <TextInput
+            name="category"
+            label="Category"
+            value={course.category}
+            onChange={onChange}
+            error= {errors.category}
+            />
+
+<button type="submit" disabled = {saving} className="btn btn-primary">
+    {saving ? "Saving..." : "Save" }
+    </button>
 </form>
-</>
-)
-}
+    );
+};
 
-}
+CourseForm.propTypes = {
+    authors:PropTypes.array.isRequired,
+    course:PropTypes.object.isRequired,
+    errors:PropTypes.object,
+    onSave:PropTypes.func.isRequired,
+    onChange:PropTypes.func.isRequired,
+    saving:PropTypes.bool
+};
 
-export default connect()(CourseForm);
+export default CourseForm;
+   
