@@ -6,14 +6,16 @@ import CourseForm from '../courses/CourseForm';
 import {newCourse} from './mockData'
 
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const baseUrl = process.env.REACT_APP_API_URL;
 
-function ManageCoursePage ({ courses,
+function ManageCoursePage ({ 
+        courses,
         authors,
         loadAuthors,
         loadCourses,
+        saveCourse,
+        history,
          ...props}) {
 
     const [course, setCourse] = useState({...props.course});
@@ -31,7 +33,28 @@ if(authors.length  === 0){
 }
     }, [] );
 
-        return <CourseForm course = { course } errors={errors} authors={authors} />; 
+    function handleChange(event) {
+        const { name, value } =  event.target;
+        setCourse(prevCourse => ({
+            ...prevCourse,
+            [name] : name==="authorId" ? parseInt(value, 10) : value
+        }));
+    }
+
+    function handleSave(event){
+        event.preventDefault();
+        saveCourse(course).then(()=>{
+            history.push("/courses");
+        });
+    }
+
+        return <CourseForm
+         course = { course }
+          errors={errors}
+           authors={authors}
+           onChange={ handleChange }
+           onSave = { handleSave } 
+           />; 
     }
 
 
@@ -41,7 +64,9 @@ ManageCoursePage.propTypes = {
     authors: PropTypes.array.isRequired,
     courses: PropTypes.array.isRequired,
    loadCourses: PropTypes.func.isRequired,
-   loadAuthors: PropTypes.func.isRequired
+   loadAuthors: PropTypes.func.isRequired,
+   saveCourse: PropTypes.func.isRequired,
+   history: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state){
@@ -54,7 +79,8 @@ function mapStateToProps(state){
 
 const mapDispatchToProps = {
   loadCourses: loadCourses,
-  loadAuthors: loadAuthors
+  loadAuthors: loadAuthors,
+  saveCourse: saveCourse
 }
 
 export default connect (mapStateToProps, mapDispatchToProps) (ManageCoursePage);
