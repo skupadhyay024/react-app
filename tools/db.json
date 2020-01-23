@@ -1,1 +1,160 @@
-{"courses":[{"id":1,"title":"Securing React Apps with Auth0","slug":"react-auth0-authentication-security","authorId":1,"category":"JavaScript"},{"id":2,"title":"React: The Big Picture","slug":"react-big-picture","authorId":1,"category":"JavaScript"},{"id":3,"title":"Creating Reusable React Components","slug":"react-creating-reusable-components","authorId":1,"category":"JavaScript"},{"id":4,"title":"Building a JavaScript Development Environment","slug":"javascript-development-environment","authorId":1,"category":"JavaScript"},{"id":5,"title":"Building Applications with React and Redux","slug":"react-redux-react-router-es6","authorId":1,"category":"JavaScript"},{"id":6,"title":"Building Applications in React and Flux","slug":"react-flux-building-applications","authorId":1,"category":"JavaScript"},{"id":7,"title":"Clean Code: Writing Code for Humans","slug":"writing-clean-code-humans","authorId":1,"category":"Software Practices"},{"id":8,"title":"Architecting Applications for the Real World","slug":"architecting-applications-dotnet","authorId":1,"category":"Software Architecture"},{"id":9,"title":"Becoming an Outlier: Reprogramming the Developer Mind","slug":"career-reboot-for-developer-mind","authorId":1,"category":"Career"},{"id":10,"title":"Web Component Fundamentals","slug":"web-components-shadow-dom","authorId":1,"category":"HTML5"}],"authors":[{"id":1,"name":"Cory House"},{"id":2,"name":"Scott Allen"},{"id":3,"name":"Dan Wahlin"}]}
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Securing React Apps with Auth0",
+      "slug": "react-auth0-authentication-security",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 2,
+      "title": "React: The Big Picture",
+      "slug": "react-big-picture",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 3,
+      "title": "Creating Reusable React Components",
+      "slug": "react-creating-reusable-components",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 4,
+      "title": "Building a JavaScript Development Environment",
+      "slug": "javascript-development-environment",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 5,
+      "title": "Building Applications with React and Redux",
+      "slug": "react-redux-react-router-es6",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 6,
+      "title": "Building Applications in React and Flux",
+      "slug": "react-flux-building-applications",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 7,
+      "title": "Clean Code: Writing Code for Humans",
+      "slug": "writing-clean-code-humans",
+      "authorId": 1,
+      "category": "Software Practices"
+    },
+    {
+      "id": 8,
+      "title": "Architecting Applications for the Real World",
+      "slug": "architecting-applications-dotnet",
+      "authorId": 1,
+      "category": "Software Architecture"
+    },
+    {
+      "id": 9,
+      "title": "Becoming an Outlier: Reprogramming the Developer Mind",
+      "slug": "career-reboot-for-developer-mind",
+      "authorId": 1,
+      "category": "Career"
+    },
+    {
+      "id": 10,
+      "title": "Web Component Fundamentals",
+      "slug": "web-components-shadow-dom",
+      "authorId": 1,
+      "category": "HTML5"
+    },
+    {
+      "id": 11,
+      "title": "Java Game",
+      "authorId": 2,
+      "category": "Prog",
+      "createdAt": 1579801228451,
+      "slug": "java-game"
+    },
+    {
+      "id": 12,
+      "title": "dcdcdfvc",
+      "authorId": 2,
+      "category": "cxcs",
+      "createdAt": 1579801296926,
+      "slug": "dcdcdfvc"
+    },
+    {
+      "id": 13,
+      "title": "ccs",
+      "authorId": 1,
+      "category": "ccscsd",
+      "createdAt": 1579801469708,
+      "slug": "ccs"
+    },
+    {
+      "id": 14,
+      "title": " c cx",
+      "authorId": 1,
+      "category": "fdvfdvd",
+      "createdAt": 1579801666184,
+      "slug": "c-cx"
+    },
+    {
+      "id": 15,
+      "title": "scvdfvcdfvdf",
+      "authorId": 3,
+      "category": "vvdv",
+      "createdAt": 1579801782305,
+      "slug": "scvdfvcdfvdf"
+    },
+    {
+      "id": 16,
+      "title": "csdcscsdcsd",
+      "authorId": 2,
+      "category": "cdscsdc",
+      "createdAt": 1579801975061,
+      "slug": "csdcscsdcsd"
+    },
+    {
+      "id": 17,
+      "title": "vdfvdf",
+      "authorId": 1,
+      "category": "csdfvdsfd",
+      "createdAt": 1579802051489,
+      "slug": "vdfvdf"
+    },
+    {
+      "id": 18,
+      "title": "khjghjg",
+      "authorId": 3,
+      "category": "fdfdsfs",
+      "createdAt": 1579802121337,
+      "slug": "khjghjg"
+    },
+    {
+      "id": 19,
+      "title": "kokok",
+      "authorId": 1,
+      "category": "koko",
+      "createdAt": 1579802313229,
+      "slug": "kokok"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Cory House"
+    },
+    {
+      "id": 2,
+      "name": "Scott Allen"
+    },
+    {
+      "id": 3,
+      "name": "Dan Wahlin"
+    }
+  ]
+}

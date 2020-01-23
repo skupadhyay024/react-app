@@ -5,7 +5,7 @@ import Courses from './courses/Courses';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
-import CourseForm from './courses/CourseForm_1';
+import CourseForm from './courses/CourseForm';
 import Navbar from 'react-bootstrap/Navbar';
 import ManageCoursePage from './courses/ManageCoursePage';
 
@@ -32,7 +32,7 @@ function NavComp(){
 <Route exact path='/courses' component = { Courses } />
 <Route exact path='/course/:slug' component = { ManageCoursePage } />
 <Route exact path='/authors' component = { Authors } />
-<Route exact path='/newCourse' component = { CourseForm } />
+<Route exact path='/newCourse' component = { ManageCoursePage } />
 
                      </Switch>
             </div>
