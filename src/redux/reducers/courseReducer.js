@@ -8,11 +8,12 @@ import initialState from './initialState';
 // }
 
 export default function(state = initialState.courses, action) {
-    console.log(action.course);
+   
     switch (action.type) {
         case CREATE_COURSE_SUCCESS:
             return [...state, {...action.course}];
         case UPDATE_COURSE_SUCCESS:
+            console.log('updating course');
                 return state.map(course =>
                     course.id === action.course.id ? action.course : course
                     );
