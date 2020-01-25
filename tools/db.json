@@ -72,75 +72,11 @@
     },
     {
       "id": 11,
-      "title": "Java Game",
-      "authorId": 2,
-      "category": "Prog",
-      "createdAt": 1579801228451,
-      "slug": "java-game"
-    },
-    {
-      "id": 12,
-      "title": "dcdcdfvc",
-      "authorId": 2,
-      "category": "cxcs",
-      "createdAt": 1579801296926,
-      "slug": "dcdcdfvc"
-    },
-    {
-      "id": 13,
-      "title": "ccs",
+      "title": "Shashi's book",
       "authorId": 1,
-      "category": "ccscsd",
-      "createdAt": 1579801469708,
-      "slug": "ccs"
-    },
-    {
-      "id": 14,
-      "title": " c cx",
-      "authorId": 1,
-      "category": "fdvfdvd",
-      "createdAt": 1579801666184,
-      "slug": "c-cx"
-    },
-    {
-      "id": 15,
-      "title": "scvdfvcdfvdf",
-      "authorId": 3,
-      "category": "vvdv",
-      "createdAt": 1579801782305,
-      "slug": "scvdfvcdfvdf"
-    },
-    {
-      "id": 16,
-      "title": "csdcscsdcsd",
-      "authorId": 2,
-      "category": "cdscsdc",
-      "createdAt": 1579801975061,
-      "slug": "csdcscsdcsd"
-    },
-    {
-      "id": 17,
-      "title": "vdfvdf",
-      "authorId": 1,
-      "category": "csdfvdsfd",
-      "createdAt": 1579802051489,
-      "slug": "vdfvdf"
-    },
-    {
-      "id": 18,
-      "title": "khjghjg",
-      "authorId": 3,
-      "category": "fdfdsfs",
-      "createdAt": 1579802121337,
-      "slug": "khjghjg"
-    },
-    {
-      "id": 19,
-      "title": "kokok",
-      "authorId": 1,
-      "category": "koko",
-      "createdAt": 1579802313229,
-      "slug": "kokok"
+      "category": "Java",
+      "createdAt": 1579962067183,
+      "slug": "shashi-s-book"
     }
   ],
   "authors": [

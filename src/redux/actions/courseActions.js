@@ -9,7 +9,7 @@ const baseUrl = process.env.REACT_APP_API_URL;
 // }
 
 export function createCourseSuccess(course) {
-    console.log(course);
+    console.log('calling create course success');
     return { type : CREATE_COURSE_SUCCESS, course};
 }
 
@@ -30,7 +30,10 @@ export const  loadCourses = () => dispatch => {
        
     }
 
+    
+
     export function saveCourse(course){
+        console.log(course, '***');
         return function(dispatch, getState){
             return courseApi
             .saveCourse(course)
